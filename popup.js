@@ -4,5 +4,17 @@ chrome.tabs.query({
 }, function(tabs) {
     var tab = tabs[0];
     var url = tab.url;
-	document.write ('<iframe id="url" frameBorder="2" scrolling="yes" height=40 width=250 src="http://tinyurl.com/api-create.php?url=' + url + '"/>');
+    GetTinyURL(url, (correctURL)=>{
+        document.getElementById("URLHere").innerHTML = correctURL;
+    });
 });
+
+function GetTinyURL(url, callback){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET','http://tinyurl.com/api-create.php?url=' + url);
+    xhr.onreadystatechange = function(){
+        if(this.readyState===4)
+            callback(this.responseText);
+    }
+    xhr.send();
+}
