@@ -10,5 +10,5 @@
    "manifest_version": 2,
    "name": "TinyURL Maker",
    "permissions": [ "tabs", "<all_urls>" ],
-   "version": "1.0"
+   "version": "1.1"
 }
