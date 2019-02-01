@@ -1,13 +1,29 @@
 <!doctype html>
-<html>
+
+<html lang="en">
   <head>
-    <title>Get TinyURL popup</title>
-    <script src=popup.js></script>
+    <title>TinyURL Maker</title>
+    <script src="popup.js"></script>
+    <style type="text/css">
+      clear {
+        display: block;
+        clear: both:
+      }
+    </style>
   </head>
   <body>
     <b>TinyURL:</b>
-    <p id="URLHere">Loading...</p>
+    <p id="tum-url" style="border:solid 1px #ccc;border-radius:2px;padding:4px 5px;">Loading...</p>
+    <div style="margin-top:1em;min-width:300px">
+      <div style="margin-left:-2px">
+        <input type="checkbox" name="tum-use-https" id="tum-use-https" value="on"/>
+        <label for="tum-use-https">Use <b>https</b> for links</label>
+        <clear/>
+      </div>
+      <div style="margin-left:-2px">
+        <input type="checkbox" name="tum-copy-to-clipboard" id="tum-copy-to-clipboard" value="on"/>
+        <label for="tum-copy-to-clipboard">Copy to clipboard automatically</label>
+      </div>
+    </div>
   </body>
- 
- </html>
-
+</html>
